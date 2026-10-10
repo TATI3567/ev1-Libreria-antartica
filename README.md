@@ -32,7 +32,7 @@ flowchart TD
     C[Catálogo CSV<br/>isbn, título, autor, categoría, curso] --> D[Chunking<br/>construir_chunk]
     D --> E[Embeddings Gemini<br/>gemini-embedding-001]
     E --> F[(Índice vectorial en memoria<br/>NumPy)]
-    B -->|título como consulta| G[Recuperación semántica<br/>similitud coseno top-k]
+    B -->|consulta| G[Recuperación semántica<br/>similitud coseno top-k]
     F --> G
     G -->|ISBN del producto| H[Consulta exacta de stock<br/>disponibilidad_por_isbn]
     I[Stock por sucursal CSV<br/>isbn, sucursal, cantidad] --> H
